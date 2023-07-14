@@ -14,6 +14,13 @@ class Polinomio
 
     public double EvaluatePol(double x)
     {
+        try {
+            return (this.A*Math.Pow(x,3) + this.B*Math.Pow(x,2) + this.C*x + this.D);
+        }
+        catch (OverflowException e) 
+        {
+            System.Console.WriteLine("Valores fuera de lo permitido");
+        }
         return (this.A*Math.Pow(x,3) + this.B*Math.Pow(x,2) + this.C*x + this.D);
     }
     public double EvaluatePol(int x)

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documentos\\ProyectoMB\\ProyectoMB.csproj",
+      "projectUniqueName": "D:\\Documentos\\ProyectoMB\\GitHub\\MathProject\\ProyectoMB.csproj",
       "projectName": "ProyectoMB",
-      "projectPath": "D:\\Documentos\\ProyectoMB\\ProyectoMB.csproj",
+      "projectPath": "D:\\Documentos\\ProyectoMB\\GitHub\\MathProject\\ProyectoMB.csproj",
       "packagesPath": "C:\\Users\\Leyva\\.nuget\\packages\\",
-      "outputPath": "D:\\Documentos\\ProyectoMB\\obj\\",
+      "outputPath": "D:\\Documentos\\ProyectoMB\\GitHub\\MathProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Leyva\\AppData\\Roaming\\NuGet\\NuGet.Config",
