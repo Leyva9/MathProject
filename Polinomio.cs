@@ -1,6 +1,6 @@
 namespace AnalisisProject;
 
-class Polinomio //Clase con los polinomios de la forma ax^3 + bx^2 +cx +d
+ public class Polinomio //Clase con los polinomios de la forma ax^3 + bx^2 +cx +d
 {
     private double a; //x3
     private double b; //x2
