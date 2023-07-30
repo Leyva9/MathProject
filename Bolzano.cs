@@ -40,8 +40,7 @@ public class Bissections
     private Polinomio Polinomio { get => polinomio; }
     private double Root { get => root; }
     
-
-    //Methods
+    //Constructors
     public Bissections (Polinomio polinomio, double tolerance = 0.00000001)
     {
         this.initialinterval = Bolzano.FindInterval(polinomio);
@@ -50,13 +49,15 @@ public class Bissections
         this.numberofiterations = (int)(Math.Log2((this.InitialInterval.Item1 - this.InitialInterval.Item2) / this.Tolerance)) + 1;
         this.root = FindRoot(this.InitialInterval,this.NumberOfIterations); 
     }
+
+    //Methods
     private double FindRoot((double, double) interval, int n)
     {
         double a = interval.Item1;
         double b = interval.Item2;
         double c = (a + b) / 2;
         //Caso Base
-        if (this.polinomio.Evaluate(c) == 0 || n == 0)
+        if (this.polinomio.Evaluate(c) == 0 || n == 0)  //n => Es la cantidad de iteraciones maxima para encontrar la raiz
         {
             Console.WriteLine("La raiz es :", c);
             return c;
