@@ -28,44 +28,18 @@ static class Bolzano // Clase que utiliza en diferentes formas las hipotesis par
 public class Bissections
 {
     //Instance Variables
-    (int, int) initialinterval;
-    double tolerance;
-    int numberofiterations;
-    Polinomio polinomio;
-    double root;
+    private (int, int) initialinterval;
+    private double tolerance;
+    private int numberofiterations;
+    private Polinomio polinomio;
+    private double root;
     //Properties
-    private (int, int) InitialInterval
-    {
-        get { return initialinterval; }
-    }
-    private double Tolerance
-    {
-        get
-        {
-            return tolerance;
-        }
-    }
-    private Polinomio polinomio1
-    {
-        get
-        {
-            return polinomio;
-        }
-    }
-    private int NumberOfIterations
-    {
-        get 
-        {
-          return numberofiterations; 
-        }
-    }
-    public double Root
-    {
-        get 
-        {
-            return root; 
-        }
-    }
+    private (int, int) InitialInterval { get => initialinterval; }
+    private double Tolerance { get => tolerance; }
+    private int NumberOfIterations { get => numberofiterations; }
+    private Polinomio Polinomio { get => polinomio; }
+    private double Root { get => root; }
+    
 
     //Methods
     public Bissections (Polinomio polinomio, double tolerance = 0.00000001)
