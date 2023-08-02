@@ -1,0 +1,17 @@
+C:\Users\FH1\Documents\MiGoogle\MathProject\bin\Debug\net7.0-windows\MathProject.exe
+C:\Users\FH1\Documents\MiGoogle\MathProject\bin\Debug\net7.0-windows\MathProject.deps.json
+C:\Users\FH1\Documents\MiGoogle\MathProject\bin\Debug\net7.0-windows\MathProject.runtimeconfig.json
+C:\Users\FH1\Documents\MiGoogle\MathProject\bin\Debug\net7.0-windows\MathProject.dll
+C:\Users\FH1\Documents\MiGoogle\MathProject\bin\Debug\net7.0-windows\MathProject.pdb
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\MathProject.csproj.AssemblyReference.cache
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\MathProject.Form1.resources
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\MathProject.csproj.GenerateResource.cache
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\MathProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\MathProject.AssemblyInfoInputs.cache
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\MathProject.AssemblyInfo.cs
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\MathProject.csproj.CoreCompileInputs.cache
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\MathProject.dll
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\refint\MathProject.dll
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\MathProject.pdb
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\MathProject.genruntimeconfig.cache
+C:\Users\FH1\Documents\MiGoogle\MathProject\obj\Debug\net7.0-windows\ref\MathProject.dll

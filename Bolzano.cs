@@ -1,4 +1,4 @@
-namespace AnalisisProject;
+namespace MathProject;
 
 static class Bolzano // Clase que utiliza en diferentes formas las hipotesis para el primer Teorema de Bolzano
 {
@@ -34,11 +34,11 @@ public class Bissections
     private Polinomio polinomio;
     private double root;
     //Properties
-    private (int, int) InitialInterval { get => initialinterval; }
-    private double Tolerance { get => tolerance; }
-    private int NumberOfIterations { get => numberofiterations; }
-    private Polinomio Polinomio { get => polinomio; }
-    private double Root { get => root; }
+    public (int, int) InitialInterval { get => initialinterval; }
+    public double Tolerance { get => tolerance; }
+    public int NumberOfIterations { get => numberofiterations; }
+    public Polinomio Polinomio { get => polinomio; }
+    public double Root { get => root; }
     
     //Constructors
     public Bissections (Polinomio polinomio, double tolerance = 0.00000001)
@@ -46,7 +46,7 @@ public class Bissections
         this.initialinterval = Bolzano.FindInterval(polinomio);
         this.tolerance = tolerance;
         this.polinomio = polinomio;
-        this.numberofiterations = (int)(Math.Log2((this.InitialInterval.Item1 - this.InitialInterval.Item2) / this.Tolerance)) + 1;
+        this.numberofiterations = (int)(Math.Log2(Math.Abs(this.InitialInterval.Item1 - this.InitialInterval.Item2) / this.Tolerance)) + 1;
         this.root = FindRoot(this.InitialInterval,this.NumberOfIterations); 
     }
 

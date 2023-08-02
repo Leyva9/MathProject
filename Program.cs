@@ -1,11 +1,15 @@
-﻿namespace AnalisisProject;
-internal class Program 
+namespace MathProject
 {
-    private static void Main(string[] args)
+    internal static class Program
     {
-        Polinomio pol = new Polinomio(1,0,-1,-2);
-        Bissections bissections = new Bissections(pol,0.0000780);
-        Console.WriteLine(bissections.Root);
+       
+        [STAThread]
+        static void Main()
+        {
+            
+            ApplicationConfiguration.Initialize();
+            Application.Run(new Form1());
 
+        }
     }
 }
