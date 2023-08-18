@@ -21,7 +21,7 @@ namespace MathProject
         }
         private void txtPol_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && e.KeyChar != '-')
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && e.KeyChar != '-' && e.KeyChar != ',')
             {
                 e.Handled = true;
                 MessageBox.Show("No se permiten caracteres no numericos en el polinomio.");
@@ -50,12 +50,12 @@ namespace MathProject
                     {
                         if (!double.TryParse(coeficientesStr[i], out coeficientes[i]))
                         {
-                            MessageBox.Show("Ingrese coeficientes válidos separados por espacios.");
+                            MessageBox.Show("Ingrese coeficientes vï¿½lidos separados por espacios.");
                             break;
                         }
                         coeficientes[i] = Convert.ToDouble(coeficientesStr[i]);
                     }
-                    // Ahora, el array de coeficientes contiene los números ingresados en la TextBox.
+                    // Ahora, el array de coeficientes contiene los nï¿½meros ingresados en la TextBox.
                     Polinomio pol = new Polinomio(coeficientes);
                     Bissections bis = new Bissections(pol);
                     MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}");
@@ -65,11 +65,11 @@ namespace MathProject
             }
             catch (FormatException)
             {
-                MessageBox.Show("Ingrese coeficientes válidos separados por espacios.");
+                MessageBox.Show("Ingrese coeficientes vï¿½lidos separados por espacios.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrió un error: {ex.Message}");
+                MessageBox.Show($"Ocurriï¿½ un error: {ex.Message}");
             }
         }
 
@@ -87,12 +87,12 @@ namespace MathProject
                     {
                         if (!double.TryParse(coeficientesStr[i], out coeficientes[i]))
                         {
-                            MessageBox.Show("Ingrese coeficientes válidos separados por espacios.");
+                            MessageBox.Show("Ingrese coeficientes vï¿½lidos separados por espacios.");
                             break;
                         }
                         coeficientes[i] = Convert.ToDouble(coeficientesStr[i]);
                     }
-                    // Ahora, el array de coeficientes contiene los números ingresados en la TextBox.
+                    // Ahora, el array de coeficientes contiene los nï¿½meros ingresados en la TextBox.
                     Polinomio pol = new Polinomio(coeficientes);
                     try
                     {
@@ -113,11 +113,11 @@ namespace MathProject
             }
             catch (FormatException)
             {
-                MessageBox.Show("Ingrese coeficientes válidos separados por espacios.");
+                MessageBox.Show("Ingrese coeficientes vï¿½lidos separados por espacios.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrió un error: {ex.Message}");
+                MessageBox.Show($"Ocurriï¿½ un error: {ex.Message}");
             }
         }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FH1\\Documents\\MiGoogle\\MathProject\\MathProject.csproj": {}
+    "C:\\Users\\FH1\\Documents\\GitHub\\MathProject\\MathProject\\MathProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FH1\\Documents\\MiGoogle\\MathProject\\MathProject.csproj": {
+    "C:\\Users\\FH1\\Documents\\GitHub\\MathProject\\MathProject\\MathProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FH1\\Documents\\MiGoogle\\MathProject\\MathProject.csproj",
+        "projectUniqueName": "C:\\Users\\FH1\\Documents\\GitHub\\MathProject\\MathProject\\MathProject.csproj",
         "projectName": "MathProject",
-        "projectPath": "C:\\Users\\FH1\\Documents\\MiGoogle\\MathProject\\MathProject.csproj",
+        "projectPath": "C:\\Users\\FH1\\Documents\\GitHub\\MathProject\\MathProject\\MathProject.csproj",
         "packagesPath": "C:\\Users\\FH1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FH1\\Documents\\MiGoogle\\MathProject\\obj\\",
+        "outputPath": "C:\\Users\\FH1\\Documents\\GitHub\\MathProject\\MathProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
