@@ -11,8 +11,7 @@ The bisection method is a root-finding algorithm based on the Bolzano-Weierstras
 To run this project in Visual Studio Code, follow these steps:
 
 1. Clone this repository to your local machine:
-
-git clone https://github.com/Leyva9/MathProject
+   <kbd style="background-color: #f3f3f3; padding: 5px;">git clone https://github.com/Leyva9/MathProject</kbd>
 
 2. Ensure you have [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) installed on your system.
 
@@ -21,9 +20,7 @@ git clone https://github.com/Leyva9/MathProject
 4. Open a terminal in Visual Studio Code and navigate to the project folder.
 
 5. Run the program using the command:
-
-<kbd style="background-color: #f3f3f3; padding: 5px;">dotnet watch run --project MathProject.sln</kbd>
-
+   <kbd style="background-color: #f3f3f3; padding: 5px;">dotnet watch run --project MathProject.sln</kbd>
 
 6. The program will calculate the real roots of the polynomial and display them in the output.
 
