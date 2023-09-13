@@ -52,6 +52,6 @@ This project is licensed under the [MIT License](LICENSE). You can refer to the 
 
 ## Credits
 
-This project was created by **[Luis Manuel Leyva-Hernández](https://github.com/Leyva9)** and **Cristhian**. You can contact Luis Manuel Leyva-Hernández at [leyva0919@gmail.com](mailto:leyva0919@gmail.com).
+This project was created by **[Luis Manuel Leyva-Hernández](https://github.com/Leyva9)** and **[Cristhian](https://github.com/crackbandicoot-dot)**. You can contact Luis Manuel Leyva-Hernández at [leyva0919@gmail.com](mailto:leyva0919@gmail.com).
 
 Thank you for using Polynomial Root Finder! We hope you find this program useful for your mathematical research and polynomial analysis.
