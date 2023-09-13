@@ -22,7 +22,8 @@ git clone https://github.com/Leyva9/MathProject
 
 5. Run the program using the command:
 
-dotnet watch run --project MathProject.sln
+<kbd style="background-color: #f3f3f3; padding: 5px;">dotnet watch run --project MathProject.sln</kbd>
+
 
 6. The program will calculate the real roots of the polynomial and display them in the output.
 
