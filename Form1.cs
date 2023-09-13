@@ -6,8 +6,8 @@ namespace MathProject
 {
     public partial class Form1 : Form
     {
-        string[] potenciasNegativasDe10 = {"10⁻¹", "10⁻²", "10⁻³", "10⁻⁴","10⁻⁵","10⁻⁶","10⁻⁷","10⁻⁸","10⁻⁹","10⁻¹⁰"};
-        
+        string[] potenciasNegativasDe10 = { "10⁻¹", "10⁻²", "10⁻³", "10⁻⁴", "10⁻⁵", "10⁻⁶", "10⁻⁷", "10⁻⁸", "10⁻⁹", "10⁻¹⁰" };
+
         public Form1()
         {
             InitializeComponent();
@@ -60,11 +60,26 @@ namespace MathProject
                     }
                     // Ahora, el array de coeficientes contiene los n�meros ingresados en la TextBox.
                     Polinomio pol = new Polinomio(coeficientes);
-                    Bissections bis = new Bissections(pol);
-                    DialogResult result = MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}", " ", MessageBoxButtons.OKCancel);
-                    if (result == DialogResult.OK)
+                    if (comboBox1.SelectedItem != null)
                     {
-                        Clipboard.SetText(bis.Root.ToString());
+                        string selected = comboBox1.SelectedItem.ToString();
+                        int indice = Array.IndexOf(potenciasNegativasDe10, selected);
+                        double tole = Math.Pow(10, -1 - indice);
+                        Bissections bis = new Bissections(pol, tole);
+                        DialogResult result = MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}", " ", MessageBoxButtons.OKCancel);
+                        if (result == DialogResult.OK)
+                        {
+                            Clipboard.SetText(bis.Root.ToString());
+                        }
+                    }
+                    else
+                    {
+                        Bissections bis = new Bissections(pol);
+                        DialogResult result = MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}", " ", MessageBoxButtons.OKCancel);
+                        if (result == DialogResult.OK)
+                        {
+                            Clipboard.SetText(bis.Root.ToString());
+                        }
                     }
                 }
             }
@@ -112,10 +127,7 @@ namespace MathProject
                     {
                         MessageBox.Show($"Ocurrio un error: {exe.Message}");
                     }
-
                 }
-
-
             }
             catch (FormatException)
             {
@@ -125,11 +137,6 @@ namespace MathProject
             {
                 MessageBox.Show($"Ocurri� un error: {ex.Message}");
             }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
