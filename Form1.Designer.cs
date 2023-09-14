@@ -107,9 +107,12 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownHeight = 100;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.DropDownWidth = 50;
             comboBox1.FlatStyle = FlatStyle.Flat;
             comboBox1.FormattingEnabled = true;
+            comboBox1.IntegralHeight = false;
             comboBox1.Location = new Point(369, 720);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(91, 33);

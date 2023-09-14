@@ -6,7 +6,7 @@ namespace MathProject
 {
     public partial class Form1 : Form
     {
-        string[] potenciasNegativasDe10 = { "10⁻¹", "10⁻²", "10⁻³", "10⁻⁴", "10⁻⁵", "10⁻⁶", "10⁻⁷", "10⁻⁸", "10⁻⁹", "10⁻¹⁰" };
+        string[] potenciasNegativasDe10 = { "10⁻¹", "10⁻²", "10⁻³", "10⁻⁴", "10⁻⁵", "10⁻⁶", "10⁻⁷", "10⁻⁸", "10⁻⁹", "10⁻¹⁰", "10⁻¹¹", "10⁻¹²", "10⁻¹³", "10⁻¹⁴", "10⁻¹⁵" };
 
         public Form1()
         {
