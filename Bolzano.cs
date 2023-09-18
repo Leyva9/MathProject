@@ -47,7 +47,7 @@ public class Bissections
         this.tolerance = tolerance;
         this.polinomio = polinomio;
         this.root = FindRoot(this.InitialInterval,this.Tolerance); 
-        this.numberofiterations = (int)((this.initialinterval.Item2 - this.initialinterval.Item1) / tolerance);
+        this.numberofiterations = (int)(Math.Log(this.initialinterval.Item2 - this.initialinterval.Item1) / tolerance + 1);
     }
 
     //Methods
