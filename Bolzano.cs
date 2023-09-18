@@ -41,35 +41,37 @@ public class Bissections
     public double Root { get => root; }
     
     //Constructors
-    public Bissections (Polinomio polinomio, double tolerance = 0.00000001)
+    public Bissections (Polinomio polinomio, double tolerance = 0.00000000001)
     {
         this.initialinterval = Bolzano.FindInterval(polinomio);
         this.tolerance = tolerance;
         this.polinomio = polinomio;
-        this.numberofiterations = (int)(Math.Log2(Math.Abs(this.InitialInterval.Item1 - this.InitialInterval.Item2) / this.Tolerance)) + 1;
-        this.root = FindRoot(this.InitialInterval,this.NumberOfIterations); 
+        this.root = FindRoot(this.InitialInterval,this.Tolerance); 
+        this.numberofiterations = (int)((this.initialinterval.Item2 - this.initialinterval.Item1) / tolerance);
     }
 
     //Methods
-    private double FindRoot((double, double) interval, int n)
+    private double FindRoot((double, double) interval, double tolerance)
     {
-        double a = interval.Item1;
-        double b = interval.Item2;
-        double c = (a + b) / 2;
-        //Caso Base
-        if (this.polinomio.Evaluate(c) == 0 || n == 0)  //n => Es la cantidad de iteraciones maxima para encontrar la raiz
+        double start = interval.Item1;
+        double end = interval.Item2;
+        //  Console.WriteLine("Intervalo Inicial"+"["+a+";"+b+"]"+"numero de iteraciones que faltan:"+n);
+        double medium = (start + end) / 2;
+        int x = 0;
+        while(Math.Abs(this.polinomio.Evaluate(medium))>=tolerance && x < 100)
         {
-            Console.WriteLine("La raiz es :", c);
-            return c;
+            if (Bolzano.Check((start,medium),this.polinomio))
+            {
+                end = medium;
+                medium = (start+end)/2;
+            }
+            else
+            {
+                start = medium;
+                medium = (start + end) / 2;
+            }
+            x++;
         }
-        //Caso Recursivo
-        if (Bolzano.Check((a, c),this.polinomio))
-        {
-           return FindRoot((a,c), n - 1);
-        }
-        else
-        {
-            return FindRoot((c,b), n - 1);
-        }
+        return medium; 
     }
 }
