@@ -35,7 +35,7 @@ public class Bissections
     private double root;
     //Properties
     public (int, int) InitialInterval { get => initialinterval; }
-    public double Tolerance { get => tolerance; }
+    public double Tolerance { get => tolerance; set => tolerance = value; }
     public int NumberOfIterations { get => numberofiterations; }
     public Polinomio Polinomio { get => polinomio; }
     public double Root { get => root; }
