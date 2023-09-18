@@ -55,8 +55,8 @@ public class Bissections
     {
         double start = interval.Item1;
         double end = interval.Item2;
-        //  Console.WriteLine("Intervalo Inicial"+"["+a+";"+b+"]"+"numero de iteraciones que faltan:"+n);
         double medium = (start + end) / 2;
+        //Se inicializa una variable contadora para las iteraciones
         int x = 0;
         while(Math.Abs(this.polinomio.Evaluate(medium))>=tolerance && x < 100)
         {
