@@ -30,7 +30,7 @@ public class Bissections
     //Instance Variables
     private (int, int) initialinterval;
     private double tolerance;
-    private int numberofiterations;
+    private int numberofiterations = 100;
     private Polinomio polinomio;
     private double root;
     //Properties
@@ -47,7 +47,6 @@ public class Bissections
         this.tolerance = tolerance;
         this.polinomio = polinomio;
         this.root = FindRoot(this.InitialInterval,this.Tolerance); 
-        this.numberofiterations = (int)((this.initialinterval.Item2 - this.initialinterval.Item1) / tolerance + 1);
     }
 
     //Methods
@@ -58,7 +57,7 @@ public class Bissections
         double medium = (start + end) / 2;
         //Se inicializa una variable contadora para las iteraciones
         int x = 0;
-        while(Math.Abs(this.polinomio.Evaluate(medium))>=tolerance && x < 100)
+        while(Math.Abs(this.polinomio.Evaluate(medium))>=tolerance && x < numberofiterations)
         {
             if (Bolzano.Check((start,medium),this.polinomio))
             {
