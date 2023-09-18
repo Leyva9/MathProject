@@ -30,6 +30,8 @@ public class Bissections
     //Instance Variables
     private (int, int) initialinterval;
     private double tolerance;
+    /* Se elige este maximo de iteraciones debido a que creemos que es sufucuente 
+    para la mayoría de los intervalos computables */
     private int numberofiterations = 100;
     private Polinomio polinomio;
     private double root;
@@ -41,7 +43,7 @@ public class Bissections
     public double Root { get => root; }
     
     //Constructors
-    public Bissections (Polinomio polinomio, double tolerance = 0.00000000001)
+    public Bissections (Polinomio polinomio, double tolerance = 0.00000001)
     {
         this.initialinterval = Bolzano.FindInterval(polinomio);
         this.tolerance = tolerance;
@@ -57,7 +59,8 @@ public class Bissections
         double medium = (start + end) / 2;
         //Se inicializa una variable contadora para las iteraciones
         int x = 0;
-        while(Math.Abs(this.polinomio.Evaluate(medium))>=tolerance && x < numberofiterations)
+        MessageBox.Show(numberofiterations.ToString());
+        while(Math.Abs(this.polinomio.Evaluate(medium))>=tolerance && x < NumberOfIterations)
         {
             if (Bolzano.Check((start,medium),this.polinomio))
             {
