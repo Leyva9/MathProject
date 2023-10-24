@@ -8,19 +8,24 @@
     "net7.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Leyva\\.nuget\\packages\\": {}
+    "C:\\Users\\FH1\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leyva\\Documents\\GitHub\\MathProject\\MathProject.csproj",
+      "projectUniqueName": "C:\\Users\\FH1\\Documents\\GitHub\\MathProject\\Last\\MathProject\\MathProject.csproj",
       "projectName": "MathProject",
-      "projectPath": "C:\\Users\\Leyva\\Documents\\GitHub\\MathProject\\MathProject.csproj",
-      "packagesPath": "C:\\Users\\Leyva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leyva\\Documents\\GitHub\\MathProject\\obj\\",
+      "projectPath": "C:\\Users\\FH1\\Documents\\GitHub\\MathProject\\Last\\MathProject\\MathProject.csproj",
+      "packagesPath": "C:\\Users\\FH1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\FH1\\Documents\\GitHub\\MathProject\\Last\\MathProject\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Leyva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\FH1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
