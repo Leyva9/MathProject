@@ -59,7 +59,6 @@ public class Bissections
         double medium = (start + end) / 2;
         //Se inicializa una variable contadora para las iteraciones
         int x = 0;
-        MessageBox.Show(numberofiterations.ToString());
         while(Math.Abs(this.polinomio.Evaluate(medium))>=tolerance && x < NumberOfIterations)
         {
             if (Bolzano.Check((start,medium),this.polinomio))

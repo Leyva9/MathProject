@@ -6,11 +6,12 @@ namespace MathProject;
 
     public double[] Terms {get => terms; private set => terms = value;}
     
-// Esta sobrecarga permite evaluar el polinomio en un numero real
+    // Esta funcion permite evaluar el polinomio en un numero real
     public double Evaluate(double x) 
     {
         double result = 0;
-        try {
+        try 
+        {
             for(int i = 0; i < Terms.Length; i++)
             {
                 result += Terms[i] * Math.Pow(x,Terms.Length-1-i);
@@ -19,12 +20,12 @@ namespace MathProject;
         }
         catch (OverflowException e) 
         {
-            System.Console.WriteLine("Valores fuera de lo permitido");
+            Console.WriteLine("{0}", e);
         }
         return result;
     }
     
-//Constructor de Clase
+    //Constructor de Clase
     public Polinomio(double[] terms)
     {
         this.Terms = (double[])terms.Clone();

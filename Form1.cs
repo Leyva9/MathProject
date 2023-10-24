@@ -47,10 +47,11 @@ namespace MathProject
                 string[] coeficientesStr = input.Split(' ');
                 double[] coeficientes = new double[coeficientesStr.Length];
 
+                
                 if (coeficientes.Length > 3 && coeficientes.Length % 2 == 0 && Convert.ToDouble(coeficientesStr[0]) != 0)
                 {
                     for (int i = 0; i < coeficientesStr.Length; i++)
-                    {
+                    {  
                         if (!double.TryParse(coeficientesStr[i], out coeficientes[i]))
                         {
                             MessageBox.Show("Ingrese coeficientes v�lidos separados por espacios.");
@@ -82,14 +83,64 @@ namespace MathProject
                         }
                     }
                 }
+                // Si se introduce una cantidad de coeficientes impares, lo cual significa que el grado del polinomio va a ser impar
+                //else if(coeficientes.Length % 2 != 0 && coeficientes.Length != null)
+                //{
+                //    MessageBox.Show("Inserte un numero par de coeficientes...");
+                //}
+                else
+                {
+                    Random random = new Random();
+                    
+                    double GenerarCoeficienteAleatorio()
+                    {
+                        // Genera un coeficiente entre -15000 y 15000
+                        return random.NextDouble() * 30000 - 15000; // Rango de -15000 a 15000
+                    }
+                    double[] GenerarCoeficientesPolinomioGrado3()
+                    {
+                        double[] coeficientes = new double[4];
+                        coeficientes[0] = GenerarCoeficienteAleatorio(); // Coeficiente para x^3
+                        coeficientes[1] = GenerarCoeficienteAleatorio(); // Coeficiente para x^2
+                        coeficientes[2] = GenerarCoeficienteAleatorio(); // Coeficiente para x
+                        coeficientes[3] = GenerarCoeficienteAleatorio(); // Término independiente
+                        return coeficientes;
+                    }
+
+                    Polinomio pol = new Polinomio(GenerarCoeficientesPolinomioGrado3());
+
+                    MessageBox.Show($"Se genera un polinomio random de grado 3 con los coeficientes {pol.Terms[0]} {pol.Terms[1]} {pol.Terms[2]} {pol.Terms[3]}");
+
+                    if (comboBox1.SelectedItem != null)
+                    {
+                        string selected = comboBox1.SelectedItem.ToString();
+                        int indice = Array.IndexOf(potenciasNegativasDe10, selected);
+                        double tole = Math.Pow(10, -1 - indice);
+                        Bissections bis = new Bissections(pol, tole);
+                        DialogResult result = MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}", " ", MessageBoxButtons.OKCancel);
+                        if (result == DialogResult.OK)
+                        {
+                            Clipboard.SetText(bis.Root.ToString());
+                        }
+                    }
+                    else
+                    {
+                        Bissections bis = new Bissections(pol);
+                        DialogResult result = MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}", " ", MessageBoxButtons.OKCancel);
+                        if (result == DialogResult.OK)
+                        {
+                            Clipboard.SetText(bis.Root.ToString());
+                        }
+                    }
+                }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Ingrese coeficientes v�lidos separados por espacios.");
+                MessageBox.Show("Ingrese coeficientes validos separados por espacios.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurri� un error: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -107,7 +158,7 @@ namespace MathProject
                     {
                         if (!double.TryParse(coeficientesStr[i], out coeficientes[i]))
                         {
-                            MessageBox.Show("Ingrese coeficientes v�lidos separados por espacios.");
+                            MessageBox.Show("Ingrese coeficientes validos separados por espacios.");
                             break;
                         }
                         coeficientes[i] = Convert.ToDouble(coeficientesStr[i]);
