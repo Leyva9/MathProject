@@ -7,6 +7,7 @@ namespace MathProject
     public partial class Form1 : Form
     {
         string[] potenciasNegativasDe10 = { "10⁻¹", "10⁻²", "10⁻³", "10⁻⁴", "10⁻⁵", "10⁻⁶", "10⁻⁷", "10⁻⁸", "10⁻⁹", "10⁻¹⁰", "10⁻¹¹", "10⁻¹²", "10⁻¹³", "10⁻¹⁴", "10⁻¹⁵" };
+        Polinomio pol = null;
 
         public Form1()
         {
@@ -14,14 +15,51 @@ namespace MathProject
             comboBox1.Items.AddRange(potenciasNegativasDe10);
         }
 
-        private void txtPol_TextChanged(object sender, EventArgs e)
+        public double[] ParseMyPol(string[] pol)
         {
-
+            double[] polParsed = new double[pol.Length];
+            for (int i = 0; i < pol.Length; i++)
+            {
+                if (!double.TryParse(pol[i], out polParsed[i]))
+                {
+                    MessageBox.Show("Ingrese coeficientes v�lidos separados por espacios.");
+                    break;
+                }
+                else
+                {
+                    polParsed[i] = Convert.ToDouble(pol[i]);
+                }
+            }
+            return polParsed;
         }
-        private void txtCalculate_TextChanged(object sender, EventArgs e)
+
+        public double SelectTolerance()
         {
-
+            string selected = comboBox1.SelectedItem.ToString();
+            int indice = Array.IndexOf(potenciasNegativasDe10, selected);
+            double tole = Math.Pow(10, -1 - indice);
+            return tole;
         }
+
+        public void ExecuteBisections(Polinomio pol, double tole)
+        {
+            Bissections bis = new Bissections(pol, tole);
+            DialogResult result = MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}", " ", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                Clipboard.SetText(bis.Root.ToString());
+            }
+        }
+
+        public void MostraryCopiarRaiz(Bissections bis)
+        {
+            DialogResult result = MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}", " ", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                Clipboard.SetText(bis.Root.ToString());
+            }
+        }
+
         private void txtPol_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && e.KeyChar != '-' && e.KeyChar != ',')
@@ -40,153 +78,70 @@ namespace MathProject
         }
 
         private void btnFindRoot_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string input = txtPol.Text;
-                string[] coeficientesStr = input.Split(' ');
-                double[] coeficientes = new double[coeficientesStr.Length];
+        {            
+            string input = txtPol.Text;
+            string[] coeficientesStr = input.Split(' ');
+            double[] coeficientes = new double[coeficientesStr.Length];
 
+            
+            if (coeficientes.Length > 3 && coeficientes.Length % 2 == 0 && Convert.ToDouble(coeficientesStr[0]) != 0)
+            {                
+                pol = new Polinomio(ParseMyPol(coeficientesStr));                  
                 
-                if (coeficientes.Length > 3 && coeficientes.Length % 2 == 0 && Convert.ToDouble(coeficientesStr[0]) != 0)
+                if (comboBox1.SelectedItem != null)
                 {
-                    for (int i = 0; i < coeficientesStr.Length; i++)
-                    {  
-                        if (!double.TryParse(coeficientesStr[i], out coeficientes[i]))
-                        {
-                            MessageBox.Show("Ingrese coeficientes v�lidos separados por espacios.");
-                            break;
-                        }
-                        coeficientes[i] = Convert.ToDouble(coeficientesStr[i]);
-                    }
-                    // Ahora, el array de coeficientes contiene los n�meros ingresados en la TextBox.
-                    Polinomio pol = new Polinomio(coeficientes);
-                    if (comboBox1.SelectedItem != null)
-                    {
-                        string selected = comboBox1.SelectedItem.ToString();
-                        int indice = Array.IndexOf(potenciasNegativasDe10, selected);
-                        double tole = Math.Pow(10, -1 - indice);
-                        Bissections bis = new Bissections(pol, tole);
-                        DialogResult result = MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}", " ", MessageBoxButtons.OKCancel);
-                        if (result == DialogResult.OK)
-                        {
-                            Clipboard.SetText(bis.Root.ToString());
-                        }
-                    }
-                    else
-                    {
-                        Bissections bis = new Bissections(pol);
-                        DialogResult result = MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}", " ", MessageBoxButtons.OKCancel);
-                        if (result == DialogResult.OK)
-                        {
-                            Clipboard.SetText(bis.Root.ToString());
-                        }
-                    }
+                    Bissections bis = new Bissections(pol, SelectTolerance());
+                    MostraryCopiarRaiz(bis);
                 }
-                // Si se introduce una cantidad de coeficientes impares, lo cual significa que el grado del polinomio va a ser impar
-                //else if(coeficientes.Length % 2 != 0 && coeficientes.Length != null)
-                //{
-                //    MessageBox.Show("Inserte un numero par de coeficientes...");
-                //}
                 else
                 {
-                    Random random = new Random();
-                    
-                    double GenerarCoeficienteAleatorio()
-                    {
-                        // Genera un coeficiente entre -15000 y 15000
-                        return random.NextDouble() * 30000 - 15000; // Rango de -15000 a 15000
-                    }
-                    double[] GenerarCoeficientesPolinomioGrado3()
-                    {
-                        double[] coeficientes = new double[4];
-                        coeficientes[0] = GenerarCoeficienteAleatorio(); // Coeficiente para x^3
-                        coeficientes[1] = GenerarCoeficienteAleatorio(); // Coeficiente para x^2
-                        coeficientes[2] = GenerarCoeficienteAleatorio(); // Coeficiente para x
-                        coeficientes[3] = GenerarCoeficienteAleatorio(); // Término independiente
-                        return coeficientes;
-                    }
-
-                    Polinomio pol = new Polinomio(GenerarCoeficientesPolinomioGrado3());
-
+                    Bissections bis = new (pol);
+                    MostraryCopiarRaiz(bis);
+                }
+            }               
+            else
+            {   
+                if(string.IsNullOrWhiteSpace(input))
+                {   
+                    // Se procede a crear un polinomio de grado 3 con coeficientes aleatorios entre 15000 y -15000
+                    pol = new Polinomio();
                     MessageBox.Show($"Se genera un polinomio random de grado 3 con los coeficientes {pol.Terms[0]} {pol.Terms[1]} {pol.Terms[2]} {pol.Terms[3]}");
 
                     if (comboBox1.SelectedItem != null)
                     {
-                        string selected = comboBox1.SelectedItem.ToString();
-                        int indice = Array.IndexOf(potenciasNegativasDe10, selected);
-                        double tole = Math.Pow(10, -1 - indice);
-                        Bissections bis = new Bissections(pol, tole);
-                        DialogResult result = MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}", " ", MessageBoxButtons.OKCancel);
-                        if (result == DialogResult.OK)
-                        {
-                            Clipboard.SetText(bis.Root.ToString());
-                        }
+                        Bissections bis = new Bissections(pol, SelectTolerance());
+                        MostraryCopiarRaiz(bis);
                     }
                     else
                     {
-                        Bissections bis = new Bissections(pol);
-                        DialogResult result = MessageBox.Show($"La raiz del polinomio es aproximadamente {bis.Root}", " ", MessageBoxButtons.OKCancel);
-                        if (result == DialogResult.OK)
-                        {
-                            Clipboard.SetText(bis.Root.ToString());
-                        }
-                    }
+                        Bissections bis = new(pol);
+                        MostraryCopiarRaiz(bis);
+                    }                    
                 }
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Ingrese coeficientes validos separados por espacios.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
+                else
+                {
+                    MessageBox.Show("Escriba un numero par de coeficientes...");
+                }
             }
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string input = txtPol.Text;
-                string[] coeficientesStr = input.Split(' ');
-                double[] coeficientes = new double[coeficientesStr.Length];
-
-                if (coeficientes.Length > 3 && coeficientes.Length % 2 == 0 && Convert.ToDouble(coeficientesStr[0]) != 0)
-                {
-                    for (int i = 0; i < coeficientesStr.Length; i++)
-                    {
-                        if (!double.TryParse(coeficientesStr[i], out coeficientes[i]))
-                        {
-                            MessageBox.Show("Ingrese coeficientes validos separados por espacios.");
-                            break;
-                        }
-                        coeficientes[i] = Convert.ToDouble(coeficientesStr[i]);
-                    }
-                    // Ahora, el array de coeficientes contiene los n�meros ingresados en la TextBox.
-                    Polinomio pol = new Polinomio(coeficientes);
-                    try
-                    {
-                        string numberToEvaluateStr = txtCalculate.Text;
-                        double numberToEvaluate = 0;
-                        double.TryParse(numberToEvaluateStr, out numberToEvaluate);
-                        double result = pol.Evaluate(numberToEvaluate);
-                        MessageBox.Show($"El resultado es: {result}");
-                    }
-
-                    catch (Exception exe)
-                    {
-                        MessageBox.Show($"Ocurrio un error: {exe.Message}");
-                    }
-                }
+        {        
+            string input = txtPol.Text;
+            string[] coeficientesStr = input.Split(' ');
+            double[] coeficientes = new double[coeficientesStr.Length];
+           
+            if (coeficientes.Length > 3 && coeficientes.Length % 2 == 0 && Convert.ToDouble(coeficientesStr[0]) != 0)
+            {    
+                // Ahora, el array de coeficientes contiene los n�meros ingresados en la TextBox.
+                Polinomio pol = new (ParseMyPol(coeficientesStr));                                   
+                double result = pol.Evaluate(txtCalculate.Text);
+                MessageBox.Show($"El resultado es: {result}");                               
             }
-            catch (FormatException)
+            else
             {
-                MessageBox.Show("Ingrese coeficientes v�lidos separados por espacios.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurri� un error: {ex.Message}");
+                double result = pol.Evaluate(txtCalculate.Text);
+                MessageBox.Show($"El resultado es: {result}");
             }
         }
     }

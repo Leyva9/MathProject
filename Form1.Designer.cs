@@ -57,7 +57,6 @@
             txtPol.Name = "txtPol";
             txtPol.Size = new Size(508, 31);
             txtPol.TabIndex = 1;
-            txtPol.TextChanged += txtPol_TextChanged;
             txtPol.KeyPress += txtPol_KeyPress;
             // 
             // label1
@@ -101,8 +100,7 @@
             txtCalculate.Margin = new Padding(4, 5, 4, 5);
             txtCalculate.Name = "txtCalculate";
             txtCalculate.Size = new Size(135, 31);
-            txtCalculate.TabIndex = 5;
-            txtCalculate.TextChanged += txtCalculate_TextChanged;
+            txtCalculate.TabIndex = 5;            
             txtCalculate.KeyPress += txtCalculate_KeyPress;
             // 
             // comboBox1
@@ -153,10 +151,10 @@
 
         #endregion
 
-        private Button btnCalculate;
         private TextBox txtPol;
         private Label label1;
         private Label label2;
+        private Button btnCalculate;
         private Button btnFindRoot;
         private TextBox txtCalculate;
         private ComboBox comboBox1;
