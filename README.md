@@ -1,36 +1,51 @@
 # Polynomial Root Finder using Bisection Method (C#)
 
-This project is an implementation in **C#** of a program that utilizes the **bisection method** and the **Bolzano-Weierstrass theorem** to find the real roots of any **odd polynomial**. This algorithm is useful for finding numerical solutions to algebraic equations, especially when an analytical solution is not readily available.
+## Introduction
 
-## Method Description
+Welcome to the Polynomial Root Finder project! This C# program utilizes the bisection method and the Bolzano-Weierstrass theorem to find real roots of odd polynomials. This algorithm is particularly useful for finding numerical solutions to algebraic equations when analytical solutions are not readily available.
 
-The bisection method is a root-finding algorithm based on the Bolzano-Weierstrass theorem, which states that if a continuous function $f(x)$ has opposite signs at two points $a$ and $b$ in the interval $[a, b]$, then there must be at least one root in that interval. The algorithm repeatedly divides the interval in half and checks in which subinterval the root lies.
+### Method Description
 
-## Running in Visual Studio Code
+The bisection method is a root-finding algorithm based on the Bolzano-Weierstrass theorem, which states that if a continuous function has opposite signs at two points within an interval, there must be at least one root in that interval. The algorithm repeatedly divides the interval in half and checks in which subinterval the root lies.
+
+## Getting Started
+
+### Running in Visual Studio Code
 
 To run this project in Visual Studio Code, follow these steps:
 
 1. Clone this repository to your local machine:
-   <kbd style="background-color: #f3f3f3; padding: 5px;">git clone https://github.com/Leyva9/MathProject</kbd>
+   ```markdown
+   git clone https://github.com/Leyva9/MathProject
 
-2. Ensure you have [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) installed on your system.
+3. Ensure you have .NET Core installed on your system.
 
-3. Open the project in Visual Studio Code.
+4. Open the project in Visual Studio Code.
 
-4. Open a terminal in Visual Studio Code and navigate to the project folder.
+5. Open a terminal in Visual Studio Code and navigate to the project folder.
 
-5. Run the program using the command:
-   <kbd style="background-color: #f3f3f3; padding: 5px;">dotnet watch run --project MathProject.sln</kbd>
+6. Run the program using the command:
+   ```markdown
+   dotnet watch run --project MathProject.sln
 
-6. The program will calculate the real roots of the polynomial and display them in the output.
+7. The program will calculate the real roots of the polynomial and display them in the output.
 
-## Running in Visual Studio IDE
+### Running in Visual Studio IDE
 
 To run this project in Visual Studio IDE, follow these steps:
 
 1. Clone this repository to your local machine:
 
-git clone https://github.com/Leyva9/MathProject
+6. The program will calculate the real roots of the polynomial and display them in the output.
+
+### Running in Visual Studio IDE
+
+To run this project in Visual Studio IDE, follow these steps:
+
+1. Clone this repository to your local machine:
+   
+   ```markdown
+   git clone https://github.com/Leyva9/MathProject
 
 2. Open Visual Studio IDE.
 
@@ -40,20 +55,34 @@ git clone https://github.com/Leyva9/MathProject
 
 5. Run the program from Visual Studio.
 
+## ScreenShots
+![Polynomial Root Finder Program ScreenShot](link)
+![Polynomial Root Finder Program ScreenShot](link)
+
 ## Contribution
 
 If you'd like to contribute to this project, you are welcome to do so! You can open issues or send pull requests to suggest improvements or corrections.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). You can refer to the LICENSE file for more information.
+This project is licensed under the MIT License. You can refer to the LICENSE file for more information.
 
 ## Credits
 
-This project was created by **[Luis Manuel Leyva-Hernández](https://github.com/Leyva9)** and **[Cristhian Delgado García](https://github.com/crackbandicoot-dot)**. You can contact us:
+This project was created by Luis Manuel Leyva-Hernández and Cristhian Delgado García. You can contact us:
 
-Luis Manuel Leyva-Hernández at [leyva0919@gmail.com](mailto:leyva0919@gmail.com).
-<br>
-Cristhian Delgado García at [delgadocristhian230@gmail.com](mailto:leyva0919@gmail.com).
+- Luis Manuel Leyva-Hernández at [leyva0919@gmail.com](mailto:leyva0919@gmail.com).
+- Cristhian Delgado García at [delgadocristhian230@gmail.com](mailto:delgadocristhian230@gmail.com).
+
+## Thank You
 
 Thank you for using Polynomial Root Finder! We hope you find this program useful for your mathematical research and polynomial analysis.
+
+[Polynomial Root Finder](link-to-your-image.png)
+
+*Add an image of your program or a screenshot here*
+
+Feel free to reach out to us if you have any questions or suggestions. Happy polynomial root finding!
+
+
+
