@@ -78,10 +78,6 @@ This project was created by Luis Manuel Leyva-Hernández and Cristhian Delgado G
 
 Thank you for using Polynomial Root Finder! We hope you find this program useful for your mathematical research and polynomial analysis.
 
-[Polynomial Root Finder](link-to-your-image.png)
-
-*Add an image of your program or a screenshot here*
-
 Feel free to reach out to us if you have any questions or suggestions. Happy polynomial root finding!
 
 
