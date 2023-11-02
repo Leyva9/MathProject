@@ -56,8 +56,8 @@ To run this project in Visual Studio IDE, follow these steps:
 5. Run the program from Visual Studio.
 
 ## ScreenShots
-![Polynomial Root Finder Program ScreenShot](https://github.com/Leyva9/MathProject/tree/main/screenshots/mathproject.jpeg)
-![Polynomial Root Finder Program ScreenShot](https://github.com/Leyva9/MathProject/tree/main/screenshots/mathprojectpow.jpeg)
+![Polynomial Root Finder Program ScreenShot](https://github.com/Leyva9/MathProject/blob/main/screenshots/mathproject.jpeg)
+![Polynomial Root Finder Program ScreenShot](https://github.com/Leyva9/MathProject/blob/main/screenshots/mathprojectpow.jpeg)
 
 ## Contribution
 
